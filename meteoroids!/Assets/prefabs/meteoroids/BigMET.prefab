@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6116179376163560694}
   - component: {fileID: -98480380321382003}
   - component: {fileID: 1090928015280696537}
+  - component: {fileID: -156122686808616957}
   m_Layer: 0
   m_Name: BigMET
   m_TagString: Untagged
@@ -147,7 +148,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4545727c1e018f9478ebbddbdc3c41ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 2.2
+  Speed: 2.45
+  score: 3
 --- !u!114 &1090928015280696537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,3 +167,23 @@ MonoBehaviour:
   Big03: {fileID: 21300000, guid: fa1c408cb9bafbd499d2500202b5e39c, type: 3}
   Big04: {fileID: 21300000, guid: b7375faa6ca708b4a84dc56e41c969c3, type: 3}
   Big05: {fileID: 21300000, guid: 44da71693765c3241894613a2dc74bce, type: 3}
+--- !u!95 &-156122686808616957
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8372565765441430963}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e647d44a13c9bb54d9ac61bc20c2b982, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

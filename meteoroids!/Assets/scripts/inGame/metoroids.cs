@@ -10,12 +10,21 @@ public class metoroids : MonoBehaviour
     GameObject targetSpawn;
     METSpawning metSpawning;
 
+    Scored scored;
+    public int score;
+
+    Animator animator;
+
+    bool go = true;
+
     // Start is called before the first frame update
     void Start()
     {
         rigid = gameObject.GetComponent<Rigidbody2D>();
         metSpawning = GameObject.Find("MeteoroidsSpawnpoint").GetComponent<METSpawning>();
         rigid.angularVelocity = Random.Range(-150f, 150f);
+        scored = GameObject.Find("ScoreManager").GetComponent<Scored>();
+        animator = gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -30,8 +39,12 @@ public class metoroids : MonoBehaviour
             : metSpawning.chosenSpawn == metSpawning.Spawn06 ? metSpawning.Spawn02
             : metSpawning.Spawn03;*/
 
-        //rigid.AddForce((Vector3.zero - transform.position) * Speed * Time.deltaTime, ForceMode2D.Impulse);
-        transform.position = Vector3.MoveTowards(transform.position, Vector3.zero, Speed * Time.deltaTime);
+        //rigid.AddForce((targetSpawn.transform.position - transform.position) * Speed * Time.deltaTime, ForceMode2D.Impulse);
+        if (go)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, Vector3.zero, Speed * Time.deltaTime);
+        }
+        
         Object.Destroy(gameObject, 10f);
     }
 
@@ -39,8 +52,13 @@ public class metoroids : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("bullet"))
         {
+            rigid.angularVelocity = 0;
+            //rigid.velocity = Vector3.zero;
+            go = false;
+            scored.METDestroyed(score);
+            animator.SetTrigger("hit");
             collision.gameObject.SetActive(false);
-            Object.Destroy(gameObject);
+            Object.Destroy(gameObject, 0.4f);
         }
     }
 }

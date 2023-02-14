@@ -15,14 +15,14 @@ public class METSpawning : MonoBehaviour
     public GameObject chosenSpawn;
     GameObject chosenMET;
     int Chosen;
-    GameObject Spawn00;
-    GameObject Spawn01;
-    GameObject Spawn02;
-    GameObject Spawn03;
-    GameObject Spawn04;
-    GameObject Spawn05;
-    GameObject Spawn06;
-    GameObject Spawn07;
+    public GameObject Spawn00;
+    public GameObject Spawn01;
+    public GameObject Spawn02;
+    public GameObject Spawn03;
+    public GameObject Spawn04;
+    public GameObject Spawn05;
+    public GameObject Spawn06;
+    public GameObject Spawn07;
 
     public float savedCooldown;
     public float Cooldown;

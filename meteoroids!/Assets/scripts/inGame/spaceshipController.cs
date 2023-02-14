@@ -63,7 +63,7 @@ public class spaceshipController : MonoBehaviour
         {
             GameObject bullet = Instantiate(bulletPrefab, bulletSpawnpoint.position, bulletSpawnpoint.rotation);
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-            rb.AddForce((bulletSpawnpoint.transform.up).normalized * bulletThrust * Time.deltaTime, ForceMode2D.Impulse);
+            rb.AddForce((bulletSpawnpoint.transform.up).normalized * bulletThrust, ForceMode2D.Impulse);
             cooldown = 0.25f;
         }
         
