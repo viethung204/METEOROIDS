@@ -15,10 +15,16 @@ public class spaceshipController : MonoBehaviour
     public float cooldown = 0.25f;
     public float bulletThrust;
 
+    Animator shipAnimator;
+
+    public AudioSource pew;
+
     // Start is called before the first frame update
     void Start()
     {
         rgbody = GetComponent<Rigidbody2D>();
+        shipAnimator = GetComponent<Animator>();
+
     }
 
     // Update is called once per frame
@@ -61,6 +67,7 @@ public class spaceshipController : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Space) && cooldown == 0)
         {
+            pew.Play();
             GameObject bullet = Instantiate(bulletPrefab, bulletSpawnpoint.position, bulletSpawnpoint.rotation);
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
             rb.AddForce((bulletSpawnpoint.transform.up).normalized * bulletThrust, ForceMode2D.Impulse);

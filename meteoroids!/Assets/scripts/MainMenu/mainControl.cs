@@ -12,9 +12,13 @@ public class mainControl : MonoBehaviour
     public GameObject MainHolder;
     public GameObject optionsHolder;
 
+    public AudioSource selecting;
+
     // Start is called before the first frame update
     void Start()
     {
+        selecting = GameObject.Find("AudioManager").GetComponent<AudioSource>();
+
         playTriangle.SetActive(true);
         optionsTriangle.SetActive(false);
         quitTriangle.SetActive(false);
@@ -30,11 +34,13 @@ public class mainControl : MonoBehaviour
         {
             if (playTriangle.activeInHierarchy == true)
             {
+                selecting.Play();
                 playTriangle.SetActive(false);
                 optionsTriangle.SetActive(true);
             }
             else if(optionsTriangle.activeInHierarchy == true)
             {
+                selecting.Play();
                 optionsTriangle.SetActive(false);
                 quitTriangle.SetActive(true);
             }
@@ -52,11 +58,13 @@ public class mainControl : MonoBehaviour
             }
             else if(optionsTriangle.activeInHierarchy == true)
             {
+                selecting.Play();
                 optionsTriangle.SetActive(false);
                 playTriangle.SetActive(true);
             }
             else if(quitTriangle.activeInHierarchy == true)
             {
+                selecting.Play();
                 quitTriangle.SetActive(false);
                 optionsTriangle.SetActive(true);
             }

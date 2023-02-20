@@ -5,9 +5,13 @@ using TMPro;
 
 public class Scored : MonoBehaviour
 {
-    public int Score = 0;
+    public static int Score = 0;
     public TextMeshProUGUI scoreText;
 
+    private void Start()
+    {
+        Score = 0;
+    }
 
     // Update is called once per frame
     void Update()

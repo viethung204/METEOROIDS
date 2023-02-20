@@ -9,9 +9,13 @@ public class optionsControl : MonoBehaviour
     public GameObject resetTri;
     public GameObject backTri;
 
+    public AudioSource selecting;
+
     // Start is called before the first frame update
     void Start()
     {
+        selecting = GameObject.Find("AudioManager").GetComponent<AudioSource>();
+
         volumeTri.SetActive(true);
         CRTTri.SetActive(false);
         resetTri.SetActive(false);
@@ -25,16 +29,19 @@ public class optionsControl : MonoBehaviour
         {
             if(volumeTri.activeInHierarchy == true)
             {
+                selecting.Play();
                 volumeTri.SetActive(false);
                 CRTTri.SetActive(true);
             }
             else if(CRTTri.activeInHierarchy == true)
             {
+                selecting.Play();
                 CRTTri.SetActive(false);
                 resetTri.SetActive(true);
             }
             else if(resetTri.activeInHierarchy == true)
             {
+                selecting.Play();
                 resetTri.SetActive(false);
                 backTri.SetActive(true);
             }
@@ -52,19 +59,27 @@ public class optionsControl : MonoBehaviour
             }
             else if(CRTTri.activeInHierarchy == true)
             {
+                selecting.Play();
                 CRTTri.SetActive(false);
                 volumeTri.SetActive(true);
             }
             else if(resetTri.activeInHierarchy == true)
             {
+                selecting.Play();
                 resetTri.SetActive(false);
                 CRTTri.SetActive(true);
             }
             else if(backTri.activeInHierarchy == true)
             {
+                selecting.Play();
                 backTri.SetActive(false);
                 resetTri.SetActive(true);
             }
         }
+    }
+
+    public void ResetScore()
+    {
+        PlayerPrefs.SetInt("MenuScore", 0);
     }
 }

@@ -8,9 +8,13 @@ public class deadMenuControl : MonoBehaviour
     public GameObject Q2MTri;
     public GameObject QuitTri;
 
+    public AudioSource selecting;
+
     // Start is called before the first frame update
     void Start()
     {
+        selecting = GameObject.Find("AudioManager").GetComponent<AudioSource>();
+
         replayTri.SetActive(true);
         Q2MTri.SetActive(false);
         QuitTri.SetActive(false);
@@ -23,11 +27,13 @@ public class deadMenuControl : MonoBehaviour
         {
             if (replayTri.activeInHierarchy == true)
             {
+                selecting.Play();
                 replayTri.SetActive(false);
                 Q2MTri.SetActive(true);
             }
             else if (Q2MTri.activeInHierarchy == true)
             {
+                selecting.Play();
                 Q2MTri.SetActive(false);
                 QuitTri.SetActive(true);
             }
@@ -45,11 +51,13 @@ public class deadMenuControl : MonoBehaviour
             }
             else if (Q2MTri.activeInHierarchy == true)
             {
+                selecting.Play();
                 Q2MTri.SetActive(false);
                 replayTri.SetActive(true);
             }
             else if (QuitTri.activeInHierarchy == true)
             {
+                selecting.Play();
                 QuitTri.SetActive(false);
                 Q2MTri.SetActive(true);
             }

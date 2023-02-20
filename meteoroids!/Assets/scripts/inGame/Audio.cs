@@ -13,16 +13,21 @@ public class Audio : MonoBehaviour
     public AudioSource explosion07;
     public AudioSource explosion08;
     public AudioSource explosion09;
+    AudioSource chosen;
+    int random;
 
-    // Start is called before the first frame update
-    void Start()
+    public void ExplosionAudio()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        random = Random.Range(1, 10);
+        chosen = random == 1 ? explosion01
+            : random == 2 ? explosion02
+            : random == 3 ? explosion03
+            : random == 4 ? explosion04
+            : random == 5 ? explosion05
+            : random == 6 ? explosion06
+            : random == 7 ? explosion07
+            : random == 8 ? explosion08
+            : explosion09;
+        chosen.Play();
     }
 }

@@ -1,0 +1,79 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using TMPro;
+
+public class audioController : MonoBehaviour
+{
+    public SpriteRenderer volumeSlider;
+    public Sprite slider0;
+    public Sprite slider1;
+    public Sprite slider2;
+    public Sprite slider3;
+    public Sprite slider4;
+    public Sprite slider5;
+    public Sprite slider6;
+    public Sprite slider7;
+    public Sprite slider8;
+    public Sprite slider9;
+    public Sprite slider10;
+
+    public TextMeshProUGUI volumeText;
+    int volume = 0;
+
+    public GameObject volumeTri;
+
+    private void Start()
+    {
+        volume = PlayerPrefs.GetInt("volume");
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        volumeText.text = volume.ToString("00");
+
+        if(volumeTri.activeInHierarchy == true)
+        {
+            if(Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
+            {
+                volume = volume == 0 ? 1
+                    : volume == 1 ? 2
+                    : volume == 2 ? 3
+                    : volume == 3 ? 4
+                    : volume == 4 ? 5
+                    : volume == 5 ? 6
+                    : volume == 6 ? 7
+                    : volume == 7 ? 8
+                    : volume == 8 ? 9
+                    : 10;
+            }
+            if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
+            {
+                volume = volume == 10 ? 9
+                    : volume == 9 ? 8
+                    : volume == 8 ? 7
+                    : volume == 7 ? 6
+                    : volume == 6 ? 5
+                    : volume == 5 ? 4
+                    : volume == 4 ? 3
+                    : volume == 3 ? 2
+                    : volume == 2 ? 1
+                    : 0;
+            }
+            PlayerPrefs.SetInt("volume", volume);
+        }
+
+        volumeSlider.sprite = volume == 0 ? slider0
+            : volume == 1 ? slider1
+            : volume == 2 ? slider2
+            : volume == 3 ? slider3
+            : volume == 4 ? slider4
+            : volume == 5 ? slider5
+            : volume == 6 ? slider6
+            : volume == 7 ? slider7
+            : volume == 8 ? slider8
+            : volume == 9 ? slider9
+            : slider10;
+    }
+}
