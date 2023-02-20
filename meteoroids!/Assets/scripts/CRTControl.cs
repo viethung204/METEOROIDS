@@ -16,7 +16,6 @@ public class CRTControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        CRTState = PlayerPrefs.GetInt("CRTState");
         MainCam = GameObject.Find("Main Camera").GetComponent<CRTPostEffecter>();
         BackCam = GameObject.Find("BackgroundCam").GetComponent<CRTPostEffecter>();
     }
@@ -24,6 +23,7 @@ public class CRTControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        CRTState = PlayerPrefs.GetInt("CRTState", 1);
         box.sprite = CRTState == 0 ? tickbox0
             : tickbox1;
             

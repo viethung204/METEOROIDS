@@ -66,7 +66,7 @@ public class metoroids : MonoBehaviour
             rigid.angularVelocity = 0;
             go = false;
             shipAnimator.SetTrigger("hit");
-            Object.Destroy(collision.gameObject, 0.349f);
+            //Object.Destroy(collision.gameObject, 0.349f);
             Object.Destroy(gameObject);
             death.dead();
         }

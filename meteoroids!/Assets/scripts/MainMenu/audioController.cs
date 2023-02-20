@@ -19,18 +19,19 @@ public class audioController : MonoBehaviour
     public Sprite slider10;
 
     public TextMeshProUGUI volumeText;
-    int volume = 0;
+    int volume;
 
     public GameObject volumeTri;
 
     private void Start()
     {
-        volume = PlayerPrefs.GetInt("volume");
+        //volume = PlayerPrefs.GetInt("volume");
     }
 
     // Update is called once per frame
     void Update()
     {
+        volume = PlayerPrefs.GetInt("volume", 10);
         volumeText.text = volume.ToString("00");
 
         if(volumeTri.activeInHierarchy == true)

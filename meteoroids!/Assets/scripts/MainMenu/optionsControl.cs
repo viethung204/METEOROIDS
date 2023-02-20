@@ -6,6 +6,7 @@ public class optionsControl : MonoBehaviour
 {
     public GameObject volumeTri;
     public GameObject CRTTri;
+    public GameObject TutorialTri;
     public GameObject resetTri;
     public GameObject backTri;
 
@@ -18,6 +19,7 @@ public class optionsControl : MonoBehaviour
 
         volumeTri.SetActive(true);
         CRTTri.SetActive(false);
+        TutorialTri.SetActive(false);
         resetTri.SetActive(false);
         backTri.SetActive(false);
     }
@@ -37,6 +39,12 @@ public class optionsControl : MonoBehaviour
             {
                 selecting.Play();
                 CRTTri.SetActive(false);
+                TutorialTri.SetActive(true);
+            }
+            else if (TutorialTri.activeInHierarchy == true)
+            {
+                selecting.Play();
+                TutorialTri.SetActive(false);
                 resetTri.SetActive(true);
             }
             else if(resetTri.activeInHierarchy == true)
@@ -63,11 +71,17 @@ public class optionsControl : MonoBehaviour
                 CRTTri.SetActive(false);
                 volumeTri.SetActive(true);
             }
+            else if (TutorialTri.activeInHierarchy == true)
+            {
+                selecting.Play();
+                TutorialTri.SetActive(false);
+                CRTTri.SetActive(true);
+            }
             else if(resetTri.activeInHierarchy == true)
             {
                 selecting.Play();
                 resetTri.SetActive(false);
-                CRTTri.SetActive(true);
+                TutorialTri.SetActive(true);
             }
             else if(backTri.activeInHierarchy == true)
             {

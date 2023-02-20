@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class whenDead : MonoBehaviour
 {
+    public BoxCollider2D shipCollider;
+    public SpriteRenderer ship;
+
     public void dead()
     {
         PlayerPrefs.SetInt("NewScore", Scored.Score);
@@ -13,7 +16,15 @@ public class whenDead : MonoBehaviour
 
     IEnumerator LoadScene()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.5f);
         SceneManager.LoadScene(2);
+    }
+
+    IEnumerator DisableShip()
+    {
+        yield return new WaitForSeconds(0.35f);
+        ship.enabled = false;
+        shipCollider.enabled = false;
+
     }
 }

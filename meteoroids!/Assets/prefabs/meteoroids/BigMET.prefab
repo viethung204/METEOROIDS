@@ -150,6 +150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 2.45
   score: 3
+  death: {fileID: 0}
 --- !u!114 &1090928015280696537
 MonoBehaviour:
   m_ObjectHideFlags: 0
