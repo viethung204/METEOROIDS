@@ -4,7 +4,7 @@ Name: meteoroids!
 Category: Games  
 Started on: 8th of February, 2023  
 
-Status: In development  
+Status: Finished  
 Platforms: Windows  
 Developer: 57knuckleknock  
 Publisher: 57knucklekock  
