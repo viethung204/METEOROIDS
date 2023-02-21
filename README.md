@@ -2,7 +2,7 @@
 
 Name: meteoroids!  
 Category: Games  
-Started on: 7th of January, 2023  
+Started on: 8th of February, 2023  
 
 Status: In development  
 Platforms: Windows  
