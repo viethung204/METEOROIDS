@@ -2,9 +2,9 @@
 
 Name: meteoroids!  
 Category: Games  
-Started on: 7th of January, 2023  
+Started on: 8th of February, 2023  
 
-Status: In development  
+Status: Finished  
 Platforms: Windows  
 Developer: 57knuckleknock  
 Publisher: 57knucklekock  
@@ -17,7 +17,7 @@ Programming Language: C#
 Asteroids, but with like a tower defense / shooting kinda twist
 
 ## RELEASE INFORMATION
-TBA
+Finished on 20th of February, 2023
 
 ## LICENSE
 Licensed under the [MIT license](https://github.com/viethung204/ASTEROID/blob/main/LICENSE.md).
