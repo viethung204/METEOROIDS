@@ -2,15 +2,16 @@
 
 Name: meteoroids!  
 Category: Games  
+Language: English  
+Genre: Casual, Arcade  
 Started on: 8th of February, 2023  
 
 Status: Finished  
 Platforms: Windows  
 Developer: 57knuckleknock  
 Publisher: 57knucklekock  
-Genre: Casual, Arcade
 
-Framework: Unity  
+Game Engine/Framework: Unity  
 Programming Language: C#
 
 ## DESCRIPTION
