@@ -21,4 +21,4 @@ Asteroids, but with like a tower defense / shooting kinda twist
 Finished on 20th of February, 2023
 
 ## LICENSE
-Licensed under the [MIT license](https://github.com/viethung204/ASTEROID/blob/main/LICENSE.md).
+All rights reserved.
