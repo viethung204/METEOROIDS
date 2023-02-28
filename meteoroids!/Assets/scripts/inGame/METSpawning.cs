@@ -56,7 +56,7 @@ public class METSpawning : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer = Time.time;
+        timer = Time.timeSinceLevelLoad;
         if (timer > eachDuration && time == true)
         {
             savedCooldown -= 0.5f;
