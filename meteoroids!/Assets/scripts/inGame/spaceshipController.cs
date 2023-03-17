@@ -32,9 +32,28 @@ public class spaceshipController : MonoBehaviour
     {
         //bulletSpawnpoint.transform.rotation = gameObject.transform.rotation;
 
-        if ((Input.GetKeyDown(KeyCode.Q) || (Input.GetKeyDown(KeyCode.E)) && rgbody.angularVelocity != 0))
+        if ((Input.GetKeyDown(KeyCode.Q) && rgbody.angularVelocity != 0))
         {
-            rgbody.angularVelocity = 0;
+            if(rgbody.angularVelocity < 0)
+            {
+                rgbody.angularVelocity = 0;
+            }
+            else
+            {
+                return;
+            }
+        }
+
+        if((Input.GetKeyDown(KeyCode.E) && rgbody.angularVelocity != 0))
+        {
+            if(rgbody.angularVelocity > 0)
+            {
+                rgbody.angularVelocity = 0;
+            }
+            else
+            {
+                return;
+            }
         }
 
         if (Input.GetKey(KeyCode.Q))
